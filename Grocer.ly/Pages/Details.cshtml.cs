@@ -5,24 +5,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
-
 using Grocer.ly.Models;
 
 namespace Grocer.ly.Pages
 {
-	public class IndexModel : PageModel
+	public class DetailsModel : PageModel
 	{
-
-		[BindProperty]
-		public int Rating { get; set; }
-		[BindProperty]
-		public string Feedback { get; set; }
-
-		public void OnGet()
-		{
-
-		}
 
 	}
 }
