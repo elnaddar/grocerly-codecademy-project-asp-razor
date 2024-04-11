@@ -22,6 +22,10 @@ namespace Grocer.ly.Pages
 			}
 			Foods = Inventory.ToList();
 			CurrentFood = Foods.Find(food => food.Name == name);
+			if (CurrentFood == null)
+			{
+				return NotFound();
+			}
 			return Page();
 		}
 	}
