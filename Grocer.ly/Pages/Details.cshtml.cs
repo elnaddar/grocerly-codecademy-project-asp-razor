@@ -11,6 +11,13 @@ namespace Grocer.ly.Pages
 {
 	public class DetailsModel : PageModel
 	{
+		public List<GroceryItem> Foods { get; set; }
+		public GroceryItem? CurrentFood { get; set; }
 
+		public void OnGet(string name)
+		{
+			Foods = Inventory.ToList();
+			CurrentFood = Foods.Find(food => food.Name == name);
+		}
 	}
 }
