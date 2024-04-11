@@ -14,10 +14,15 @@ namespace Grocer.ly.Pages
 		public List<GroceryItem> Foods { get; set; }
 		public GroceryItem? CurrentFood { get; set; }
 
-		public void OnGet(string name)
+		public async Task<IActionResult> OnGetAsync(string name)
 		{
+			using (StreamWriter writer = new StreamWriter("log.txt", append: true))
+			{
+				await writer.WriteLineAsync($"{DateTime.Now} {name}");
+			}
 			Foods = Inventory.ToList();
 			CurrentFood = Foods.Find(food => food.Name == name);
+			return Page();
 		}
 	}
 }
