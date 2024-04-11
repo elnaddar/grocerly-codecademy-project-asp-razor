@@ -19,7 +19,9 @@ namespace Grocer.ly.Pages
 		[BindProperty]
 		public string Feedback { get; set; }
 
-		public void OnGet()
+		public List<GroceryItem> Foods = Inventory.ToList();
+
+        public void OnGet()
 		{
 
 		}
